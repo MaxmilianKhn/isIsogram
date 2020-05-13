@@ -20,10 +20,18 @@ void long_non_isograms(void){
     TEST_ASSERT_FALSE(is_isogram("griechisch"));
     TEST_ASSERT_FALSE(is_isogram("Hausaufgaben"));
 }
-/*void long_isograms(void){
-    TEST_ASSERT_TRUE();
-    TEST_ASSERT_TRUE();
-}*/
+void long_isograms(void){
+    TEST_ASSERT_TRUE(is_isogram("Dialogschwerpunkt"));
+    TEST_ASSERT_TRUE(is_isogram("Pokalbeschriftung"));
+}
+void specialSymbols_isograms(void){
+    TEST_ASSERT_TRUE(is_isogram("abs!!"));
+    TEST_ASSERT_TRUE(is_isogram("?!sgbd?!"));
+}
+void number_isograms(void){
+    TEST_ASSERT_TRUE(is_isogram("0123456789abcdefg"));
+    TEST_ASSERT_TRUE(is_isogram("0123456789abcdefg9"));
+}
 
 int main(void)
 {
@@ -34,7 +42,9 @@ int main(void)
    RUN_TEST(test_word_with_upper_and_lower_letter);
    RUN_TEST(spaces_should_not_count);
    RUN_TEST(long_non_isograms);
-   //RUN_TEST(long_isograms);
+   RUN_TEST(long_isograms);
+   RUN_TEST(specialSymbols_isograms);
+   RUN_TEST(number_isograms);
 
    UnityEnd();
    return 0;
