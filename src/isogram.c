@@ -1,6 +1,4 @@
 #include "isogram.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 
@@ -8,13 +6,10 @@ bool is_isogram(const char phrase[]){
     int length=strlen(phrase);
     int occur[36]={0};
     for(int l1=0;l1<length;++l1){
-        if((('a'>tolower(phrase[l1]))||(tolower(phrase[l1])>'z'))&&((0>phrase[l1])||(phrase[l1]>9))){
-            continue;
-        }
         if((0<=phrase[l1])&&(phrase[l1]<=9)){
             occur[phrase[l1]-'0']++;
         }
-        else{
+        else if(('a'<=tolower(phrase[l1]))&&(tolower(phrase[l1])<='z')){
             occur[tolower(phrase[l1])+10-'a']++;
         }
     }

@@ -6,12 +6,15 @@
 void test_false_isogram(void)
 {
    TEST_ASSERT_FALSE(is_isogram("wow"));
+    TEST_ASSERT_FALSE(is_isogram("zzu"));
+   TEST_ASSERT_FALSE(is_isogram("hdaa"));
 }
 void test_true_isogram(void){
    TEST_ASSERT_TRUE(is_isogram("Abcdefg"));
 }
 void test_word_with_upper_and_lower_letter(void){
    TEST_ASSERT_FALSE(is_isogram("Aal"));
+   TEST_ASSERT_FALSE(is_isogram("zZl"));
 }
 void spaces_should_not_count(void){
     TEST_ASSERT_TRUE(is_isogram("Hi das funkt."))
