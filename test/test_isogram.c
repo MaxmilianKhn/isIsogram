@@ -5,7 +5,7 @@
 
 void test_false_isogram(void)
 {
-   TEST_ASSERT_FALSE(is_isogram("AA"));
+   TEST_ASSERT_FALSE(is_isogram("wow"));
 }
 void test_true_isogram(void){
    TEST_ASSERT_TRUE(is_isogram("Abcdefg"));
@@ -32,6 +32,10 @@ void number_isograms(void){
     TEST_ASSERT_TRUE(is_isogram("0123456789abcdefg"));
     TEST_ASSERT_TRUE(is_isogram("0123456789abcdefg9"));
 }
+void threeTimesDoubleLetters(void){
+    TEST_ASSERT_TRUE(is_isogram("aabbcc"));
+    TEST_ASSERT_TRUE(is_isogram("aAbBcC"));
+}
 
 int main(void)
 {
@@ -45,6 +49,7 @@ int main(void)
    RUN_TEST(long_isograms);
    RUN_TEST(specialSymbols_isograms);
    RUN_TEST(number_isograms);
+   RUN_TEST(threeTimesDoubleLetters);
 
    UnityEnd();
    return 0;
